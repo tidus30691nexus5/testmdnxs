@@ -1,0 +1,40 @@
+ngx_addon_name=ngx_http_ja3_module
+
+if [ -n "$ngx_module_link" ]; then
+    ngx_module_type=HTTP
+    ngx_module_name=ngx_http_ja3_module
+    ngx_module_srcs="$ngx_addon_dir/ngx_ja3_module.c
+    $ngx_addon_dir/ngx_ja3_builder.c
+    $ngx_addon_dir/ngx_ja3_ssl.c
+    $ngx_addon_dir/ngx_ja4_builder.c
+    $ngx_addon_dir/ngx_ja4_os.c
+    "
+    ngx_module_incs="$ngx_addon_dir"
+    #sudo apt install libxxhash-dev
+	ngx_module_libs="-lxxhash"
+	. auto/module
+fi
+
+#auto copy lib so to modules nginx
+if [ "$NGX_PLATFORM" != "win32" ]; then
+    post_make_modules="$post_make_modules install_ja3_module"
+fi
+
+install_ja3_module () {
+ #   mkdir -p $NGX_PREFIX/modules
+  #  cp objs/ngx_http_ja3_module.so $NGX_PREFIX/modules/
+
+     dst="$NGX_PREFIX/modules"
+
+    mkdir -p "$dst"
+    cp objs/ngx_http_ja3_module.so "$dst/"
+
+    echo
+    echo "=============================================="
+    echo "✔ ngx_http_ja3_module.so installed successfully"
+    echo "✔ Path: $dst/ngx_http_ja3_module.so"
+    echo "✔ NGINX_PREFIX: $NGX_PREFIX"
+    echo "=============================================="
+    echo
+
+}
