@@ -4,11 +4,11 @@
 #include <ngx_config.h>
 #include <ngx_core.h>
 #include <openssl/ssl.h>
-
+#include "ngx_ja3_module.h"
 #define NGX_JA_MAX_ITEMS 64
 
+#include <ngx_http.h>
 
-#include <openssl/opensslv.h>
 
 /*
  * ===============================
@@ -86,5 +86,5 @@ ngx_int_t ngx_ja4_build(ngx_ja_fp_t *fp);
 
 ngx_int_t ngx_ja_ssl_init(ngx_conf_t *cf, ngx_http_ja_conf_t *conf);
 
-ngx_ja_fp_t *ngx_ja_ssl_get_fp(SSL *ssl)
+ngx_ja_fp_t *ngx_ja_ssl_get_fp(SSL *ssl);
 #endif

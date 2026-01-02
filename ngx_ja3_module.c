@@ -1,7 +1,7 @@
 #include <ngx_config.h>
 #include <ngx_core.h>
 #include <ngx_http.h>
-
+#include <ngx_event_openssl.h>
 #include "ngx_ja3_module.h"
 #include "ngx_ja3_ssl.h"
 #include "ngx_ja3_cache.h"

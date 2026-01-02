@@ -23,6 +23,6 @@ ngx_ja4_os_t ngx_ja4_detect_os(
 
 ngx_str_t ngx_ja4_os_name(ngx_ja4_os_t os);
 
-static void ngx_ja4_set_os(ngx_ja_fp_t *fp)
+static void ngx_ja4_set_os(ngx_ja_fp_t *fp);
 
 #endif

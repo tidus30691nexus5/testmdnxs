@@ -1,5 +1,12 @@
 #include "ngx_ja3_ssl.h"
 //#include <openssl/bytestring.h>
+
+
+#include <ngx_ja3_module.h>
+#include <openssl/opensslv.h>
+
+
+
 #include "ngx_ja3_builder.h"
 #include "ngx_ja4_builder.h"
 #include "ngx_ja4_os.h"
@@ -16,7 +23,7 @@
 #include <ngx_event_openssl.h>
 #include <ngx_http_ssl_module.h>
 
-#include <ngx_http.h>
+
 
 #define NGX_JA_IS_GREASE(x) (((x) & 0x0f0f) == 0x0a0a)
 #define READ_U8(p)   (*(p)++)
