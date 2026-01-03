@@ -20,7 +20,7 @@
 
 
 //fix ssl 
-#include <ngx_event_openssl.h>
+
 #include <ngx_http_ssl_module.h>
 
 

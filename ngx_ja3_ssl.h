@@ -3,7 +3,8 @@
 
 #include <ngx_config.h>
 #include <ngx_core.h>
-#include <openssl/ssl.h>
+//#include <openssl/ssl.h>
+#include <ngx_event_openssl.h>
 #include "ngx_ja3_module.h"
 #define NGX_JA_MAX_ITEMS 64
 
@@ -29,7 +30,7 @@
  *  Forward declarations
  * ===============================
  */
-static int ngx_ja_client_hello_cb(SSL *ssl, int *al, void *arg);
+ int ngx_ja_client_hello_cb(SSL *ssl, int *al, void *arg);
 
 
 
